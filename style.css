@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    max-width: 1900px;
+    /* outline: 2px solid red; */
+}
+
+#refresh-container {
+    display: flex;
+    justify-content: center;
+}
+
+#sketch-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    height: 600px;
+}
+
+.column {
+    display: flex;
+    flex: 1;
+}
+
+.squareDiv {
+    background-color: lightblue;
+    margin: 0;
+    border: .5px solid grey;
+    flex: 1;
+}
+
+.squareDiv:hover {
+    background-color: brown;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    background-color: rgb(87, 197, 37);
+    padding: 10px;
+    border-radius: 12px;
+    color: white;
+    font-size: large;
+}
