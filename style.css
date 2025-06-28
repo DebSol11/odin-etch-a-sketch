@@ -55,6 +55,7 @@ button {
   text-align: center;
   text-decoration: none;
   font-size: 16px;
+  outline: 1px solid rgb(212, 212, 212);
 }
 
 button:hover {
@@ -62,15 +63,65 @@ button:hover {
   outline: 1px solid grey;
 }
 
+button#black,
+button#eraser,
+button#grey,
+button#random {
+  width: 50px;
+  height: 50px;
+}
+
 button#black {
-  color: black;
+  background: black;
+}
+
+button#eraser {
+  background: white;
 }
 
 button#grey {
-  color: grey;
+  background: grey;
 }
 
 button#random {
-  color: black;
-  background: linear-gradient(-60deg, red 50%, yellow 50%);
+  color: white;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(255, 154, 0, 1) 10%,
+    rgba(208, 222, 33, 1) 20%,
+    rgba(79, 220, 74, 1) 30%,
+    rgba(63, 218, 216, 1) 40%,
+    rgba(47, 201, 226, 1) 50%,
+    rgba(28, 127, 238, 1) 60%,
+    rgba(95, 21, 242, 1) 70%,
+    rgba(186, 12, 248, 1) 80%,
+    rgba(251, 7, 217, 1) 90%,
+    rgba(255, 0, 0, 1) 100%
+  );
+}
+
+button#reset, button.set-size {
+    border-radius: 10px;
+}
+
+.set-board-size {
+    width: 500px;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 3fr 1fr;
+    gap: 50px;
+}
+
+input[type=text] {
+    padding:5px; 
+    border:2px solid #ccc; 
+    border-radius: 10px;
+    color: grey;
+    font-size: 20px;
+    text-align: right;
+}
+
+input[type=text]:focus {
+    border-color:#333;
 }
