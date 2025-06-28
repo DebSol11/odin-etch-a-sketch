@@ -1,9 +1,43 @@
-* {
-    outline: 1px solid red;
-}
+/* * {
+  outline: 1px solid red;
+} */
 
 .board {
-    width: 500px;
-    height: 500px;
-    display: grid;
+  width: 500px;
+  height: 500px;
+  display: grid;
+  outline: 1px solid black;
+}
+
+.title {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 5vw;
+  font-weight: 800;
+}
+
+.mode {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.buttons {
+    margin-top: 10px;
+}
+
+div.board > div {
+    outline: 1px solid rgba(212, 212, 212, 0.308);
+}
+
+.set-board-size {
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
