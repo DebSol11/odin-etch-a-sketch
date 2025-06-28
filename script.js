@@ -11,6 +11,8 @@ const resetButton = document.querySelector("#reset");
 const bodySelector = document.querySelector("body");
 const modeDiv = document.querySelector(".mode");
 
+const errorDiv = document.querySelector(".error");
+
 greyButton.addEventListener("click", () => {
   color = "grey";
 });
@@ -62,9 +64,10 @@ populateBoard(16);
 
 function changeSize(input) {
   if (input >= 2 && input <= 100) {
+    errorDiv.style.display = "none";
     populateBoard(input);
   } else {
-    console.log("Please type in a number between 2 and 100");
+    errorDiv.style.display = "flex";
   }
 }
 

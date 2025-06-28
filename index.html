@@ -17,16 +17,21 @@
       <div class="content">
         <div class="board"></div>
         <div class="buttons">
-            <button id="black"></button>
-            <button id="eraser"></button>
-            <button id="grey"></button>
-            <button id="random"></button>
-            <button id="reset">Reset</button>
+          <button id="black"></button>
+          <button id="eraser"></button>
+          <button id="grey"></button>
+          <button id="random"></button>
+          <button id="reset">Reset</button>
         </div>
         <div class="set-board-size">
-            <input type="text" placeholder="Size of Board" value="16">
-            <button class="set-size">Set Size</button>
+          <input
+            type="text"
+            placeholder="Size of Board - [2; 100]"
+            value="50"
+          />
+          <button class="set-size">Set Size</button>
         </div>
+        <div class="error">Input must be between 2 and 100</div>
       </div>
     </div>
   </body>

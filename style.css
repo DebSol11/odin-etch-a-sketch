@@ -71,6 +71,13 @@ button#random {
   height: 50px;
 }
 
+button#black:focus,
+button#eraser:focus,
+button#grey:focus,
+button#random:focus {
+  border: 2px solid black;
+}
+
 button#black {
   background: black;
 }
@@ -101,27 +108,33 @@ button#random {
   );
 }
 
-button#reset, button.set-size {
-    border-radius: 10px;
+button#reset,
+button.set-size {
+  border-radius: 10px;
 }
 
 .set-board-size {
-    width: 500px;
-    display: grid;
-    justify-content: space-between;
-    grid-template-columns: 3fr 1fr;
-    gap: 50px;
+  width: 500px;
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 3fr 1fr;
+  gap: 50px;
 }
 
-input[type=text] {
-    padding:5px; 
-    border:2px solid #ccc; 
-    border-radius: 10px;
-    color: grey;
-    font-size: 20px;
-    text-align: right;
+input[type="text"] {
+  padding: 5px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  color: grey;
+  font-size: 20px;
+  text-align: right;
 }
 
-input[type=text]:focus {
-    border-color:#333;
+input[type="text"]:focus {
+  border-color: #333;
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
 }
