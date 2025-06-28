@@ -4,6 +4,8 @@ let color = "black";
 const blackButton = document.querySelector("#black");
 const eraserButton = document.querySelector("#eraser");
 const greyButton = document.querySelector("#grey");
+const randomButton = document.querySelector("#random");
+const resetButton = document.querySelector("#reset");
 
 greyButton.addEventListener("click", () => {
   color = "grey";
@@ -13,6 +15,12 @@ eraserButton.addEventListener("click", () => {
 });
 blackButton.addEventListener("click", () => {
   color = "black";
+});
+randomButton.addEventListener("click", () => {
+  color = "random";
+});
+resetButton.addEventListener("click", () => {
+  resetBoard();
 });
 
 function populateBoard(size) {
@@ -51,9 +59,20 @@ setSizeButton.addEventListener("click", () => {
 
 function colorSquare() {
   // this here refers to whatever div we added the eventListener to
-  this.style.backgroundColor = color;
+  if (color === "random") {
+    this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+  } else {
+    this.style.backgroundColor = color;
+  }
 }
 
 function changeColor(choice) {
   color = choice;
+}
+
+function resetBoard() {
+  let board = document.querySelector(".board");
+  let squares = board.querySelectorAll("div");
+  squares.forEach((div) => div.remove());
+  populateBoard(inputField.value);
 }
