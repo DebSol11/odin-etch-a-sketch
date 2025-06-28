@@ -9,6 +9,7 @@ const randomButton = document.querySelector("#random");
 const resetButton = document.querySelector("#reset");
 
 const bodySelector = document.querySelector("body");
+const modeDiv = document.querySelector(".mode");
 
 greyButton.addEventListener("click", () => {
   color = "grey";
@@ -26,9 +27,19 @@ resetButton.addEventListener("click", () => {
   resetBoard();
 });
 
-bodySelector.addEventListener("click", () => {
-  click = !click;
-})
+bodySelector.addEventListener("click", (e) => {
+  console.log(e)
+  if (e.target.tagName != "BUTTON") {
+    click = !click;
+    if (click) {
+      modeDiv.textContent =
+        "Mode: sketching, to stop sketching click the left mouse Button";
+    } else {
+      modeDiv.textContent =
+        "Mode: not sketching, to sketch click the left mouse Button.";
+    }
+  }
+});
 
 function populateBoard(size) {
   let board = document.querySelector(".board");
