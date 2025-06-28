@@ -30,14 +30,47 @@
 }
 
 .buttons {
-    margin-top: 10px;
+  margin-top: 10px;
+  display: flex;
+  gap: 5px;
+  width: 500px;
+  flex: 1;
+  justify-content: space-between;
 }
 
 div.board > div {
-    outline: 1px solid rgba(212, 212, 212, 0.308);
+  outline: 1px solid rgba(212, 212, 212, 0.308);
 }
 
 .set-board-size {
-    margin-top: 10px;
-    margin-bottom: 15px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+button {
+  background-color: #5ab5f1; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+button:hover {
+  cursor: pointer;
+  outline: 1px solid grey;
+}
+
+button#black {
+  color: black;
+}
+
+button#grey {
+  color: grey;
+}
+
+button#random {
+  color: black;
+  background: linear-gradient(-60deg, red 50%, yellow 50%);
 }
