@@ -2,6 +2,7 @@
 let color = "black";
 let click = true;
 
+// selectors
 const blackButton = document.querySelector("#black");
 const eraserButton = document.querySelector("#eraser");
 const greyButton = document.querySelector("#grey");
