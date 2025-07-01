@@ -31,7 +31,7 @@ resetButton.addEventListener("click", () => {
 });
 
 bodySelector.addEventListener("click", (e) => {
-  console.log(e)
+  console.log(e);
   if (e.target.tagName != "BUTTON") {
     click = !click;
     if (click) {
@@ -55,7 +55,44 @@ function populateBoard(size) {
 
   for (let i = 0; i < size * size; i++) {
     let square = document.createElement("div");
-    square.addEventListener("mouseover", colorSquare);
+    let firstMouseOver = true;
+    square.addEventListener("mouseover", () => {
+      // if (square.style.opacity === "" || square.style.backgroundColor === "") {
+      //   firstMouseOver = true;
+      // }
+      if (click == true) {
+        if (square.style.backgroundColor != "" && color === "white") {
+          square.style.backgroundColor = "white";
+        }
+        if (color === "random") {
+          if (firstMouseOver) {
+            square.style.backgroundColor = `hsl(${
+              Math.random() * 360
+            }, 100%, 50%)`;
+            square.style.opacity = 0.1;
+          } else if (firstMouseOver == false && square.style.backgroundColor != "")
+            {
+            square.style.opacity = Math.min(
+              parseFloat(square.style.opacity) + 0.1,
+              1
+            );
+          }
+        } else {
+          if (firstMouseOver) {
+            square.style.backgroundColor = color;
+            square.style.opacity = 0.1;
+          } else if (firstMouseOver == false && color == black) {
+            square.style.opacity = Math.min(
+              parseFloat(square.style.opacity) + 0.1,
+              1
+            );
+          }
+        }
+      }
+    });
+    square.addEventListener("mouseleave", () => {
+      firstMouseOver = false;
+    });
     square.style.backgroundColor = "white";
     board.insertAdjacentElement("beforeend", square);
   }
@@ -81,7 +118,6 @@ setSizeButton.addEventListener("click", () => {
 
 function colorSquare() {
   if (click == true) {
-    // this here refers to whatever div we added the eventListener to
     if (color === "random") {
       this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
     } else {
