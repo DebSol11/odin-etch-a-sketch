@@ -57,21 +57,17 @@ function populateBoard(size) {
     let square = document.createElement("div");
     let firstMouseOver = true;
     square.addEventListener("mouseover", () => {
-      // if (square.style.opacity === "" || square.style.backgroundColor === "") {
-      //   firstMouseOver = true;
-      // }
       if (click == true) {
-        if (square.style.backgroundColor != "" && color === "white") {
-          square.style.backgroundColor = "white";
-        }
         if (color === "random") {
           if (firstMouseOver) {
             square.style.backgroundColor = `hsl(${
               Math.random() * 360
             }, 100%, 50%)`;
             square.style.opacity = 0.1;
-          } else if (firstMouseOver == false && square.style.backgroundColor != "")
-            {
+          } else if (
+            firstMouseOver == false &&
+            square.style.backgroundColor != ""
+          ) {
             square.style.opacity = Math.min(
               parseFloat(square.style.opacity) + 0.1,
               1
@@ -81,11 +77,20 @@ function populateBoard(size) {
           if (firstMouseOver) {
             square.style.backgroundColor = color;
             square.style.opacity = 0.1;
-          } else if (firstMouseOver == false && color == black) {
+          } else if (firstMouseOver == false && color == "black") {
+            square.style.backgroundColor = color;
             square.style.opacity = Math.min(
               parseFloat(square.style.opacity) + 0.1,
               1
             );
+          } else if (firstMouseOver == false && color == "grey") {
+            square.style.backgroundColor = color;
+            square.style.opacity = Math.min(
+              parseFloat(square.style.opacity) + 0.1,
+              1
+            );
+          } else if (firstMouseOver == false && color == "white") {
+            square.style.backgroundColor = "white";
           }
         }
       }
@@ -116,15 +121,15 @@ setSizeButton.addEventListener("click", () => {
   changeSize(inputField.value);
 });
 
-function colorSquare() {
-  if (click == true) {
-    if (color === "random") {
-      this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-    } else {
-      this.style.backgroundColor = color;
-    }
-  }
-}
+// function colorSquare() {
+//   if (click == true) {
+//     if (color === "random") {
+//       this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+//     } else {
+//       this.style.backgroundColor = color;
+//     }
+//   }
+// }
 
 function changeColor(choice) {
   color = choice;
